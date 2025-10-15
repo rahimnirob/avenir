@@ -200,7 +200,7 @@ export default function PreHomePage() {
               muted={isMuted}
               onEnded={handleVideoEnd}
             >
-              <source src="/Teaser trailer.mp4" type="video/mp4" />
+              <source src="/teaser-trailer.mp4" type="video/mp4" />
               
               {/* Fallback content */}
               <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
