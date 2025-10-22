@@ -199,8 +199,9 @@ export default function PreHomePage() {
               playsInline
               muted={isMuted}
               onEnded={handleVideoEnd}
+              preload="auto"
             >
-              <source src="/teaser-trailer.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dvb3nxr68/video/upload/v1761155754/teaser-trailer_kybhzc.mp4" type="video/mp4" />
               
               {/* Fallback content */}
               <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
