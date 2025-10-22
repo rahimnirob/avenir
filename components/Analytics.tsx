@@ -8,7 +8,7 @@ export default function Analytics() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (typeof window.gtag !== "undefined") {
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
       const url = pathname + (searchParams ? `?${searchParams.toString()}` : "");
       window.gtag("config", process.env.NEXT_PUBLIC_GA_ID, { page_path: url });
     }
