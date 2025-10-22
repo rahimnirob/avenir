@@ -5,6 +5,7 @@ import Script from "next/script";
 import "./globals.css";
 import { NavigationProvider } from "@/providers/navigation-provider";
 import Analytics from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,7 +48,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-[#0a0b0c] text-white overflow-x-hidden">
         <NavigationProvider>
           {children}
-          <Analytics /> {/* Track route changes */}
+          <Analytics /> {/* Track route changes for Google Analytics */}
+          <VercelAnalytics /> {/* Vercel Analytics */}
         </NavigationProvider>
       </body>
     </html>
