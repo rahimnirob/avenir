@@ -4,8 +4,7 @@ import { JetBrains_Mono, Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { NavigationProvider } from "@/providers/navigation-provider";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import Analytics from "@/components/Analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,24 +22,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  // Track page views on route change
-  useEffect(() => {
-    if (typeof window.gtag !== "undefined") {
-      const url = pathname + (searchParams ? `?${searchParams.toString()}` : "");
-      window.gtag("config", process.env.NEXT_PUBLIC_GA_ID, { page_path: url });
-    }
-  }, [pathname, searchParams]);
-
   return (
     <html
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} antialiased dark`}
     >
       <head>
-        {/* Google Analytics */}
+        {/* Google Analytics Scripts */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
@@ -57,7 +45,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
       </head>
       <body className="bg-[#0a0b0c] text-white overflow-x-hidden">
-        <NavigationProvider>{children}</NavigationProvider>
+        <NavigationProvider>
+          {children}
+          <Analytics /> {/* Track route changes */}
+        </NavigationProvider>
       </body>
     </html>
   );
