@@ -10,8 +10,8 @@ import MainLayout from "@/components/shared/main-layout"
 import { waitlistService, type JoinWaitlistData, type WaitlistResponse } from "@/lib/supabase/waitlist"
 
 const GlassCard = ({ children, className = "", glow = false }: { children: React.ReactNode; className?: string; glow?: boolean }) => (
-  <div className={`relative overflow-hidden bg-white/[0.02] backdrop-blur-xl border border-white/[0.05] rounded-2xl ${glow ? "shadow-[0_0_50px_rgba(99,102,241,0.3)]" : "shadow-xl"} ${className}`}>
-    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/20 via-transparent to-cyan-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+  <div className={`relative overflow-hidden bg-white/2 backdrop-blur-xl border border-white/5 rounded-2xl ${glow ? "shadow-[0_0_50px_rgba(99,102,241,0.3)]" : "shadow-xl"} ${className}`}>
+    <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/20 via-transparent to-cyan-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500" />
     <div className="relative z-10">{children}</div>
   </div>
 )
@@ -135,7 +135,7 @@ export default function WaitlistPage() {
         <div className="max-w-2xl mx-auto p-6 md:p-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="space-y-8">
             <div className="text-center space-y-4 mb-12">
-              <motion.h1 className="text-5xl font-bold bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+              <motion.h1 className="text-5xl font-bold bg-linear-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent" initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                 AVENIR
               </motion.h1>
               <motion.p className="text-xl text-gray-300 font-light" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
@@ -165,7 +165,7 @@ export default function WaitlistPage() {
                         <label className="block text-xs font-mono text-gray-400 mb-2 uppercase tracking-wider">Email</label>
                         <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm focus:border-cyan-400/60 focus:bg-black/60 outline-none transition-all placeholder:text-gray-500" placeholder="Enter your email" required disabled={isSubmitting} />
                       </div>
-                      <button type="submit" disabled={isSubmitting || !email || !name} className="w-full bg-gradient-to-r from-indigo-500 to-cyan-500 text-white font-semibold py-4 rounded-xl hover:from-indigo-600 hover:to-cyan-600 disabled:opacity-50 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-2xl disabled:cursor-not-allowed">
+                      <button type="submit" disabled={isSubmitting || !email || !name} className="w-full bg-linear-to-r from-indigo-500 to-cyan-500 text-white font-semibold py-4 rounded-xl hover:from-indigo-600 hover:to-cyan-600 disabled:opacity-50 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-2xl disabled:cursor-not-allowed">
                         {isSubmitting ? "JOINING..." : "JOIN WAITLIST"}
                       </button>
                     </form>
@@ -192,7 +192,7 @@ export default function WaitlistPage() {
                   <GlassCard className="p-8" glow>
                     <div className="text-center space-y-6">
                       <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring" }}>
-                        <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2">Welcome to the Future</h2>
+                        <h2 className="text-3xl font-bold bg-linear-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2">Welcome to the Future</h2>
                         <p className="text-gray-300 text-sm">You are founder #{result.position}</p>
                       </motion.div>
                       <motion.div className="bg-black/40 rounded-xl p-6 border border-cyan-400/30" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>

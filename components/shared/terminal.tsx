@@ -239,7 +239,7 @@ export default function Terminal() {
               </div>
 
               {/* Decorative grid */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d415_1px,transparent_1px),linear-gradient(to_bottom,#06b6d415_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30 pointer-events-none" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d415_1px,transparent_1px),linear-gradient(to_bottom,#06b6d415_1px,transparent_1px)] bg-size-[2rem_2rem] opacity-30 pointer-events-none" />
 
               {/* Top drag handle for height */}
               <div
@@ -313,7 +313,7 @@ export default function Terminal() {
                       onChange={(e) => setInput(e.target.value)}
                       onKeyDown={onKeyDown}
                       placeholder="Type a command (e.g. exec.about) ..."
-                      className="w-full bg-gradient-to-r from-black/80 to-black/60 border border-cyan-500/30 rounded-lg py-3 pl-8 pr-32 font-mono text-sm outline-none focus:border-cyan-400/60 focus:bg-black/80 placeholder:text-gray-500 text-gray-100 transition-all shadow-lg"
+                      className="w-full bg-linear-to-r from-black/80 to-black/60 border border-cyan-500/30 rounded-lg py-3 pl-8 pr-32 font-mono text-sm outline-none focus:border-cyan-400/60 focus:bg-black/80 placeholder:text-gray-500 text-gray-100 transition-all shadow-lg"
                     />
                   </div>
 
@@ -325,7 +325,7 @@ export default function Terminal() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 6 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute bottom-full mb-2 left-0 right-32 bg-gradient-to-br from-cyan-950/40 to-black/90 backdrop-blur-xl border border-cyan-500/30 rounded-lg shadow-2xl shadow-cyan-500/20 overflow-hidden"
+                        className="absolute bottom-full mb-2 left-0 right-32 bg-linear-to-br from-cyan-950/40 to-black/90 backdrop-blur-xl border border-cyan-500/30 rounded-lg shadow-2xl shadow-cyan-500/20 overflow-hidden"
                       >
                         {suggestions.map((s) => (
                           <li key={s}>
@@ -370,7 +370,7 @@ export default function Terminal() {
                     </button>
                     <button
                       onClick={handleRun}
-                      className="px-4 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold text-sm hover:from-emerald-400 hover:to-cyan-400 active:scale-95 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20"
+                      className="px-4 py-2 rounded-lg bg-linear-to-r from-emerald-500 to-cyan-500 text-white font-semibold text-sm hover:from-emerald-400 hover:to-cyan-400 active:scale-95 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20"
                       aria-label="Run command"
                     >
                       <Play className="w-4 h-4" fill="currentColor" />

@@ -195,13 +195,13 @@ export default function MirenViewer() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div ref={mountRef} className="w-[600px] h-[800px] rounded-lg overflow-hidden" />
+      <div ref={mountRef} className="w-1508h-200nded-lg overflow-hidden" />
       {isLoading && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm rounded-lg">
           <div className="text-white animate-pulse mb-4 text-lg font-mono tracking-wider">Loading Miren...</div>
           <div className="w-64 h-2 bg-gray-800 rounded-full mb-2 overflow-hidden">
             <div
-              className="h-2 bg-gradient-to-r from-gray-400 via-white to-gray-400 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+              className="h-2 bg-linear-to-r from-gray-400 via-white to-gray-400 rounded-full transition-all duration-300 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
               style={{ width: `${loadingProgress}%` }}
             />
           </div>

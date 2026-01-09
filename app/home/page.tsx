@@ -40,8 +40,8 @@ export default function HomePage() {
         <div className="min-h-screen flex items-center justify-center p-6 md:p-8 relative">
           {/* Animated Background */}
           <div className="fixed inset-0 -z-10">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-linear-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
             
             {/* Grid Pattern */}
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
@@ -75,7 +75,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-8"
             >
-              <h1 className="text-4xl md:text-6xl font-mono font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+              <h1 className="text-4xl md:text-6xl font-mono font-bold bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
                 WELCOME TO AVENIR
               </h1>
               <p className="text-gray-400 font-mono text-sm md:text-base tracking-wider">
@@ -110,9 +110,9 @@ export default function HomePage() {
                   <source src="/home.mp4" type="video/mp4" />
                   
                   {/* Fallback */}
-                  <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
+                  <div className="w-full h-full bg-linear-to-br from-black via-gray-900 to-black flex items-center justify-center">
                     <div className="text-center space-y-4">
-                      <h2 className="text-3xl md:text-5xl font-mono font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                      <h2 className="text-3xl md:text-5xl font-mono font-bold bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                         AVENIR
                       </h2>
                       <p className="text-gray-400 font-mono">Loading experience...</p>
@@ -145,7 +145,7 @@ export default function HomePage() {
                     ease: "linear",
                   }}
                 >
-                  <div className="h-px w-full bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
+                  <div className="h-px w-full bg-linear-to-r from-transparent via-cyan-400/30 to-transparent" />
                 </motion.div>
               </div>
 

@@ -103,7 +103,7 @@ export default function SecretPage() {
       <div className="fixed inset-0 -z-10">
         {/* Animated gradient orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-1255h-125gbg-linear-to-rm-indigo-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -115,7 +115,7 @@ export default function SecretPage() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-125 h-125gbg-linear-to-rm-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             opacity: [0.6, 0.3, 0.6],
@@ -135,7 +135,7 @@ export default function SecretPage() {
         <FloatingParticles />
 
         {/* Scan lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(6,182,212,0.03)_50%)] bg-[length:100%_4px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(6,182,212,0.03)_50%)] bg-size-[100%_4px] pointer-events-none" />
       </div>
 
       <Navbar />
@@ -156,13 +156,13 @@ export default function SecretPage() {
                   transition={{ delay: 0.3, duration: 0.8 }}
                   className="relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent blur-xl" />
+                  <div className="absolute inset-0 bg-linear-to-rrom-transparent via-cyan-500/10 to-transparent blur-xl" />
                   <GlitchText className="relative text-xs font-mono text-cyan-400 tracking-widest uppercase mb-4 flex items-center justify-center gap-2">
                     <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
                     Transmission Intercepted
                     <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
                   </GlitchText>
-                  <h1 className="relative text-5xl md:text-6xl font-bold bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+                  <h1 className="relative text-5xl md:text-6xl font-bold bg-linear-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
                     Chapter 1: The World Before
                   </h1>
                 </motion.div>
@@ -188,12 +188,12 @@ export default function SecretPage() {
                   transition={{ delay: 1, duration: 0.8 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500/0 via-cyan-500/5 to-cyan-500/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -inset-4 bg-linear-to-rrom-cyan-500/0 via-cyan-500/5 to-cyan-500/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative border-l-2 border-cyan-400/50 pl-6 py-2">
                     <p className="text-lg text-gray-200">
                       They called it <span className="text-cyan-400 font-semibold relative">
                         progress
-                        <span className="absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+                        <span className="absolute inset-x-0 -bottom-1 h-px bg-linear-to-r from-transparent via-cyan-400 to-transparent" />
                       </span>. The world moved faster, louder, brighter. Everyone chased the next thing, the next trend, the next viral moment.
                     </p>
                   </div>
@@ -203,14 +203,14 @@ export default function SecretPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.4, duration: 0.8 }}
-                  className="relative bg-gradient-to-r from-black/40 via-indigo-950/20 to-black/40 border border-indigo-500/20 rounded-xl p-6 backdrop-blur-sm group hover:border-indigo-500/40 transition-all duration-500"
+                  className="relative bg-linear-to-rrom-black/40 via-indigo-950/20 to-black/40 border border-indigo-500/20 rounded-xl p-6 backdrop-blur-sm group hover:border-indigo-500/40 transition-all duration-500"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-indigo-500/5 to-indigo-500/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-r from-indigo-500/0 via-indigo-500/5 to-indigo-500/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <p className="relative">
                     But beneath the noise, something else was happening. Patterns emerged. Signals in the chaos.{" "}
                     <span className="text-indigo-400 font-semibold relative">
                       Unseen forces
-                      <span className="absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-indigo-400 to-transparent" />
+                      <span className="absolute inset-x-0 -bottom-1 h-px bg-linear-to-rrom-transparent via-indigo-400 to-transparent" />
                     </span> began to shape the future before it arrived.
                   </p>
                 </motion.div>
@@ -230,11 +230,11 @@ export default function SecretPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.2, duration: 0.8 }}
-                  className="relative overflow-hidden bg-gradient-to-br from-cyan-950/40 via-black/80 to-purple-950/40 border border-cyan-400/30 rounded-2xl p-8 backdrop-blur-xl shadow-2xl shadow-cyan-500/10"
+                  className="relative overflow-hidden bg-linear-to-brrom-cyan-950/40 via-black/80 to-purple-950/40 border border-cyan-400/30 rounded-2xl p-8 backdrop-blur-xl shadow-2xl shadow-cyan-500/10"
                 >
                   {/* Animated border glow */}
                   <div className="absolute inset-0 rounded-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-cyan-400/20 rounded-2xl blur-xl opacity-50" />
+                    <div className="absolute inset-0 bg-linear-to-r from-cyan-400/20 via-purple-400/20 to-cyan-400/20 rounded-2xl blur-xl opacity-50" />
                   </div>
                   
                   {/* Content */}
@@ -271,15 +271,15 @@ export default function SecretPage() {
                   transition={{ delay: 3, duration: 0.8 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-4 bg-gradient-to-l from-indigo-500/0 via-indigo-500/5 to-indigo-500/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -inset-4 bg-linear-to-l from-indigo-500/0 via-indigo-500/5 to-indigo-500/0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative border-r-2 border-indigo-400/50 pr-6 py-2 text-right">
                     <p className="text-xl text-gray-200">
                       And then, one day, he found it. A place where the future lived before reality. A place called{" "}
                       <span className="relative inline-block">
-                        <span className="text-transparent bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text font-bold text-3xl">
+                        <span className="text-transparent bg-linear-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text font-bold text-3xl">
                           AVENIR
                         </span>
-                        <span className="absolute -inset-2 bg-gradient-to-r from-indigo-400/20 via-cyan-400/20 to-indigo-400/20 blur-xl -z-10 animate-pulse" />
+                        <span className="absolute -inset-2 bg-linear-to-r from-indigo-400/20 via-cyan-400/20 to-indigo-400/20 blur-xl -z-10 animate-pulse" />
                       </span>
                       .
                     </p>
@@ -296,7 +296,7 @@ export default function SecretPage() {
               >
                 <div className="relative">
                   {/* Outer glow */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl rounded-full scale-150" />
+                  <div className="absolute inset-0 bg-linear-to-r from-cyan-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl rounded-full scale-150" />
                   
                   <motion.div
                     className="relative w-24 h-24"
@@ -339,7 +339,7 @@ export default function SecretPage() {
               >
                 <div className="space-y-3">
                   <p className="text-gray-400 text-base">This is only the beginning.</p>
-                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500/10 to-cyan-500/10 border border-cyan-400/20 rounded-full px-4 py-2">
+                  <div className="inline-flex items-center gap-2 bg-linear-to-r from-indigo-500/10 to-cyan-500/10 border border-cyan-400/20 rounded-full px-4 py-2">
                     <span className="text-xs text-gray-500 font-mono">Chapter 2: The Discovery</span>
                     <span className="text-cyan-400">•</span>
                     <span className="text-xs text-cyan-400 font-mono">Coming Soon</span>
@@ -347,7 +347,7 @@ export default function SecretPage() {
                 </div>
 
                 <motion.button
-                  className="group relative px-10 py-4 bg-gradient-to-r from-indigo-500/20 via-cyan-500/20 to-purple-500/20
+                  className="group relative px-10 py-4 bg-linear-to-r from-indigo-500/20 via-cyan-500/20 to-purple-500/20
                            border border-cyan-400/40 rounded-xl text-cyan-400 font-mono text-base font-semibold
                            hover:border-cyan-400/70 transition-all duration-300 overflow-hidden shadow-lg shadow-cyan-500/10"
                   whileHover={{ scale: 1.05 }}
@@ -363,7 +363,7 @@ export default function SecretPage() {
                     </motion.span>
                   </span>
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-indigo-500/0 via-cyan-500/30 to-purple-500/0 rounded-xl"
+                    className="absolute inset-0 bg-linear-to-r from-indigo-500/0 via-cyan-500/30 to-purple-500/0 rounded-xl"
                     animate={{
                       x: ["-100%", "100%"],
                     }}

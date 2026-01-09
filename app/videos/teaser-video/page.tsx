@@ -56,7 +56,7 @@ export default function PreHomePage() {
       <div className="fixed inset-0 overflow-hidden">
         {/* Large animated gradient orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/3 w-1506h-150gbg-linear-to-rm-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -70,7 +70,7 @@ export default function PreHomePage() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/4 w-[700px] h-[700px] bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/3 right-1/4 w-175 h-175 bg-linear-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1.3, 1, 1.3],
             opacity: [0.6, 0.3, 0.6],
@@ -110,7 +110,7 @@ export default function PreHomePage() {
         ))}
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d410_1px,transparent_1px),linear-gradient(to_bottom,#06b6d410_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d410_1px,transparent_1px),linear-gradient(to_bottom,#06b6d410_1px,transparent_1px)] bg-size-[3rem_3rem] opacity-20" />
       </div>
 
       <div className="relative z-10 w-full max-w-5xl">
@@ -203,7 +203,7 @@ export default function PreHomePage() {
               <source src="/teaser-trailer.mp4" type="video/mp4" />
               
               {/* Fallback content */}
-              <div className="w-full h-full bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center">
+              <div className="w-full h-full bg-linear-to-br from-black via-gray-900 to-black flex items-center justify-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -212,11 +212,11 @@ export default function PreHomePage() {
                 >
                   <div className="relative">
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 blur-3xl"
+                      className="absolute inset-0 bg-linear-to-r from-cyan-400/20 to-blue-400/20 blur-3xl"
                       animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     />
-                    <h1 className="relative text-5xl md:text-7xl font-mono font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    <h1 className="relative text-5xl md:text-7xl font-mono font-bold bg-linear-to-r from-cyan-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
                       AVENIR
                     </h1>
                   </div>
@@ -236,7 +236,7 @@ export default function PreHomePage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-center justify-center"
+                  className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent flex items-center justify-center"
                 >
                   <div className="flex items-center gap-4">
                     <motion.button
@@ -268,7 +268,7 @@ export default function PreHomePage() {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="absolute inset-0 bg-gradient-to-br from-black/95 via-cyan-950/40 to-black/95 backdrop-blur-xl flex items-center justify-center"
+                  className="absolute inset-0 bg-linear-to-br from-black/95 via-cyan-950/40 to-black/95 backdrop-blur-xl flex items-center justify-center"
                 >
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -289,7 +289,7 @@ export default function PreHomePage() {
                       >
                         <h2 className="text-3xl font-mono text-cyan-400 tracking-wider">EXPERIENCE COMPLETE</h2>
                       </motion.div>
-                      <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+                      <div className="h-px w-32 mx-auto bg-linear-to-r from-transparent via-cyan-400 to-transparent" />
                     </div>
                     
                     <div className="flex items-center justify-center gap-3 text-gray-300">
@@ -331,13 +331,13 @@ export default function PreHomePage() {
         >
           <motion.button
             onClick={skipToMain}
-            className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 border border-cyan-500/50 text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 transition-all duration-300 rounded-xl backdrop-blur-xl font-mono tracking-wider text-base overflow-hidden shadow-lg shadow-cyan-500/20"
+            className="group relative flex items-center gap-3 px-8 py-4 bg-linear-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 border border-cyan-500/50 text-cyan-400 hover:text-cyan-300 hover:border-cyan-400 transition-all duration-300 rounded-xl backdrop-blur-xl font-mono tracking-wider text-base overflow-hidden shadow-lg shadow-cyan-500/20"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             {/* Animated background shimmer */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent"
+              className="absolute inset-0 bg-linear-to-r from-transparent via-cyan-400/20 to-transparent"
               animate={{ x: ["-100%", "200%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             />
@@ -354,7 +354,7 @@ export default function PreHomePage() {
             </span>
 
             {/* Bottom glow line */}
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.button>
         </motion.div>
 

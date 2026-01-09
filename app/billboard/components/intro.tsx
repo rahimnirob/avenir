@@ -1,17 +1,27 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { motion } from "framer-motion"
 
 export default function Intro() {
-  const [windowSize, setWindowSize] = useState({ width: 1920, height: 1080 })
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight
-    })
+    setMounted(true)
   }, [])
+
+  // Generate stable random positions only once on client
+  const particles = useMemo(() => {
+    if (!mounted) return []
+    return Array.from({ length: 15 }).map(() => ({
+      id: Math.random(),
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 8 + Math.random() * 4,
+      delay: Math.random() * 5,
+      xOffset: Math.random() * 100 - 50,
+    }))
+  }, [mounted])
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
@@ -19,7 +29,7 @@ export default function Intro() {
       <div className="absolute inset-0">
         {/* Animated gradient orbs */}
         <motion.div
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-linear-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
@@ -33,7 +43,7 @@ export default function Intro() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-linear-to-r from-purple-500/20 via-pink-500/20 to-cyan-500/20 rounded-full blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.5, 0.3, 0.5],
@@ -66,25 +76,29 @@ export default function Intro() {
           }}
         />
 
-        {/* Floating particles */}
-        {Array.from({ length: 15 }).map((_, i) => (
+        {/* Floating particles - only render on client */}
+        {mounted && particles.map((particle) => (
           <motion.div
-            key={i}
+            key={particle.id}
             className="absolute w-1 h-1 bg-cyan-400/30 rounded-full"
+            initial={{ 
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+            }}
             animate={{
-              y: [Math.random() * windowSize.height, -100],
-              x: [Math.random() * 100 - 50, Math.random() * 100 - 50],
+              y: [0, -100],
+              x: [0, particle.xOffset],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 8 + Math.random() * 4,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: particle.delay,
               ease: "easeInOut",
             }}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
           />
         ))}
@@ -93,7 +107,7 @@ export default function Intro() {
       {/* Flickering scanlines effect */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent"
+          className="absolute inset-0 bg-linear-to-b from-transparent via-cyan-500/5 to-transparent"
           animate={{
             opacity: [0.3, 0.6, 0.3],
           }}
@@ -162,7 +176,7 @@ export default function Intro() {
           className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight"
         >
           <motion.span 
-            className="inline-block bg-gradient-to-r from-cyan-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
+            className="inline-block bg-linear-to-r from-cyan-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent"
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],
             }}
@@ -226,7 +240,7 @@ export default function Intro() {
           Every request. Every startup. Broadcasting in{" "}
           <span className="text-cyan-400 font-semibold relative">
             real-time
-            <span className="absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+            <span className="absolute inset-x-0 -bottom-1 h-px bg-linear-to-r from-transparent via-cyan-400 to-transparent" />
           </span>
           , like a digital TV channel.
         </motion.p>
@@ -239,10 +253,10 @@ export default function Intro() {
           className="relative max-w-5xl mx-auto"
         >
           {/* TV frame border with enhanced styling */}
-          <div className="relative bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl p-10 border-4 border-gray-700 shadow-2xl">
+          <div className="relative bg-linear-to-br from-gray-800 via-gray-900 to-black rounded-3xl p-10 border-4 border-gray-700 shadow-2xl">
             {/* Enhanced screen glow */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 via-indigo-500/30 to-purple-500/30 rounded-3xl blur-3xl"
+              className="absolute inset-0 bg-linear-to-br from-cyan-500/30 via-indigo-500/30 to-purple-500/30 rounded-3xl blur-3xl"
               animate={{
                 opacity: [0.3, 0.6, 0.3],
               }}
@@ -278,7 +292,7 @@ export default function Intro() {
 
               {/* Scan line effect */}
               <motion.div
-                className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"
+                className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-cyan-400/50 to-transparent"
                 animate={{
                   y: [0, 400],
                 }}
@@ -305,7 +319,7 @@ export default function Intro() {
                 </motion.div>
                 
                 <motion.div 
-                  className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent"
+                  className="text-3xl md:text-4xl font-bold bg-linear-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent"
                   animate={{
                     backgroundPosition: ["0%", "100%", "0%"],
                   }}
@@ -327,7 +341,7 @@ export default function Intro() {
                 <div className="max-w-md mx-auto mt-8">
                   <div className="bg-gray-800 rounded-full h-2 overflow-hidden">
                     <motion.div
-                      className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 h-2"
+                      className="bg-linear-to-r from-cyan-400 via-indigo-400 to-purple-400 h-2"
                       animate={{
                         x: ["-100%", "100%"],
                       }}
@@ -367,7 +381,7 @@ export default function Intro() {
 
           {/* Enhanced glow effect under TV */}
           <motion.div
-            className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-r from-cyan-500/40 via-indigo-500/40 to-purple-500/40 blur-3xl rounded-full"
+            className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-linear-to-r from-cyan-500/40 via-indigo-500/40 to-purple-500/40 blur-3xl rounded-full"
             animate={{
               opacity: [0.5, 0.8, 0.5],
               scale: [1, 1.1, 1],

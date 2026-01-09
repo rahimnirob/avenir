@@ -172,7 +172,7 @@ export default function Feature() {
           className="text-center mb-16"
         >
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-indigo-400 
+            className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-cyan-400 to-indigo-400 
                          bg-clip-text text-transparent"
           >
             The Billboard in Action
@@ -192,7 +192,7 @@ export default function Feature() {
                   initial={{ width: 0 }}
                   animate={{ width: `${progressPercentage}%` }}
                   transition={{ duration: 0.5 }}
-                  className="bg-gradient-to-r from-cyan-400 to-indigo-400 h-2"
+                  className="bg-linear-to-r from-cyan-400 to-indigo-400 h-2"
                 />
               </div>
               {slotsRemaining > 0 ? (
@@ -215,13 +215,13 @@ export default function Feature() {
           <div className="lg:col-span-2 space-y-6">
             {/* Main billboard card */}
             <div
-              className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 
-                            rounded-2xl p-8 border border-white/10 overflow-hidden min-h-[400px]
+              className="relative bg-linear-to-br from-gray-900 via-black to-gray-900 
+                            rounded-2xl p-8 border border-white/10 overflow-hidden min-h-100
                             flex items-center justify-center"
             >
               {/* Background glow */}
               <div
-                className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-indigo-500/10 to-purple-500/10 
+                className="absolute inset-0 bg-linear-to-br from-cyan-500/10 via-indigo-500/10 to-purple-500/10 
                               blur-3xl"
               />
 
@@ -239,7 +239,7 @@ export default function Feature() {
                     <div className="flex items-center justify-center gap-2">
                       {currentSubmission.priority && (
                         <div
-                          className="px-3 py-1 bg-gradient-to-r from-amber-500/20 to-orange-500/20 
+                          className="px-3 py-1 bg-linear-to-r from-amber-500/20 to-orange-500/20 
                                       border border-amber-500/30 rounded-full text-amber-400 text-xs font-semibold
                                       flex items-center gap-1"
                         >
@@ -259,7 +259,7 @@ export default function Feature() {
 
                     {/* Startup name */}
                     <h3
-                      className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-cyan-200 to-white 
+                      className="text-5xl md:text-6xl font-bold bg-linear-to-rrom-white via-cyan-200 to-white 
                                  bg-clip-text text-transparent"
                     >
                       {currentSubmission.startup_name}
@@ -334,7 +334,7 @@ export default function Feature() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="sticky top-24 bg-white/[0.02] backdrop-blur-xl border border-white/10 
+              className="sticky top-24 bg-white/2 backdrop-blur-xl border border-white/10 
                          rounded-2xl p-6 space-y-6"
             >
               <div className="text-center">
@@ -465,7 +465,7 @@ export default function Feature() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-semibold 
+                  className="w-full bg-linear-to-r from-cyan-500 to-indigo-500 text-white font-semibold 
                            py-3 rounded-xl hover:from-cyan-600 hover:to-indigo-600 disabled:opacity-50 
                            transition-all transform hover:scale-[1.02] active:scale-[0.98]
                            shadow-lg hover:shadow-2xl disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -489,7 +489,7 @@ export default function Feature() {
                     exit={{ opacity: 0, y: -10 }}
                     className={`${
                       isPriority
-                        ? "bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-amber-500/30"
+                        ? "bg-linear-to-r from-amber-500/20 to-orange-500/20 border-amber-500/30"
                         : "bg-green-500/20 border-green-500/30"
                     } border rounded-xl p-4 text-center`}
                   >

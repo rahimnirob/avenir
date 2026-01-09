@@ -219,13 +219,13 @@ export default function ThreeViewer() {
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div ref={mountRef} className="w-[600px] h-[800px] rounded-lg overflow-hidden" />
+      <div ref={mountRef} className="w-150 h-200 rounded-lg overflow-hidden" />
       {isLoading && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-800/50 backdrop-blur-sm rounded-lg">
           <div className="text-gray-300 animate-pulse mb-4 text-lg font-mono">Loading Miren...</div>
           <div className="w-64 h-2 bg-gray-700 rounded-full mb-2">
             <div 
-              className="h-2 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full transition-all duration-300"
+              className="h-2 bg-linear-to-r from-gray-400 to-gray-500 rounded-full transition-all duration-300"
               style={{ width: `${loadingProgress}%` }}
             />
           </div>

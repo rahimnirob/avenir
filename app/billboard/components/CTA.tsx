@@ -2,22 +2,17 @@
 
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { supabase } from "@/lib/supabase/client"
 import { Zap, ArrowUp, Sparkles } from "lucide-react"
 
 export default function CTA() {
   const router = useRouter()
   const [priorityCount, setPriorityCount] = useState(0)
-  const [windowSize, setWindowSize] = useState({ width: 1920, height: 1080 })
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Set window size on client
-    setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight
-    })
-
+    setMounted(true)
     fetchPriorityCount()
 
     const channel = supabase
@@ -43,6 +38,19 @@ export default function CTA() {
     }
   }
 
+  // Generate stable random positions only once on client
+  const particles = useMemo(() => {
+    if (!mounted) return []
+    return Array.from({ length: 12 }).map(() => ({
+      id: Math.random(),
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      duration: 6 + Math.random() * 3,
+      delay: Math.random() * 5,
+      xOffset: Math.random() * 100 - 50,
+    }))
+  }, [mounted])
+
   const slotsRemaining = Math.max(0, 50 - priorityCount)
   const urgencyLevel = slotsRemaining <= 10 ? "high" : slotsRemaining <= 25 ? "medium" : "low"
 
@@ -50,11 +58,11 @@ export default function CTA() {
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Enhanced background effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-brom-transparent via-indigo-500/10 to-transparent" />
         
         {/* Animated gradient orbs */}
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-to-r from-cyan-500/15 via-indigo-500/15 to-purple-500/15 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-linear-to-r from-cyan-500/15 via-indigo-500/15 to-purple-500/15 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -65,30 +73,34 @@ export default function CTA() {
           }}
         />
 
-        {/* Floating particles */}
-        {Array.from({ length: 12 }).map((_, i) => (
+        {/* Floating particles - only render on client */}
+        {mounted && particles.map((particle) => (
           <motion.div
-            key={i}
+            key={particle.id}
             className="absolute w-1 h-1 bg-cyan-400/40 rounded-full"
+            initial={{
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
+            }}
             animate={{
-              y: [Math.random() * windowSize.height, -100],
-              x: [Math.random() * 100 - 50, Math.random() * 100 - 50],
+              y: [0, -100],
+              x: [0, particle.xOffset],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: 6 + Math.random() * 3,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: particle.delay,
             }}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${particle.left}%`,
+              top: `${particle.top}%`,
             }}
           />
         ))}
 
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d410_1px,transparent_1px),linear-gradient(to_bottom,#06b6d410_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-20" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d410_1px,transparent_1px),linear-gradient(to_bottom,#06b6d410_1px,transparent_1px)] bg-size-[3rem_3rem] opacity-20" />
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10">
@@ -109,7 +121,7 @@ export default function CTA() {
             className="inline-block relative"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-indigo-500/30 rounded-full blur-2xl"
+              className="absolute inset-0 bg-linear-to-br from-cyan-500/30 to-indigo-500/30 rounded-full blur-2xl"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.5, 0.8, 0.5],
@@ -119,7 +131,7 @@ export default function CTA() {
                 repeat: Infinity,
               }}
             />
-            <div className="relative w-24 h-24 mx-auto bg-gradient-to-br from-cyan-500 to-indigo-500 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/50">
+            <div className="relative w-24 h-24 mx-auto bg-linear-to-br from-cyan-500 to-indigo-500 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/50">
               <Zap className="w-12 h-12 text-white" fill="white" />
             </div>
           </motion.div>
@@ -134,7 +146,7 @@ export default function CTA() {
               transition={{ delay: 0.2 }}
             >
               <motion.span
-                className="inline-block bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent"
+                className="inline-block bg-linear-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent"
                 animate={{
                   backgroundPosition: ["0%", "100%", "0%"],
                 }}
@@ -158,7 +170,7 @@ export default function CTA() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-red-500/20 border border-amber-500/40 rounded-full px-5 py-2"
+                className="inline-flex items-center gap-2 bg-linear-to-r from-amber-500/20 to-red-500/20 border border-amber-500/40 rounded-full px-5 py-2"
               >
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
@@ -218,11 +230,11 @@ export default function CTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => router.push("/waitlist")}
-              className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 to-indigo-500 text-white font-bold rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all text-lg overflow-hidden"
+              className="group relative px-10 py-5 bg-linear-to-r from-cyan-500 to-indigo-500 text-white font-bold rounded-xl shadow-2xl hover:shadow-cyan-500/50 transition-all text-lg overflow-hidden"
             >
               {/* Shimmer effect */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                className="absolute inset-0 bg-linear-to-rrom-transparent via-white/20 to-transparent"
                 animate={{ x: ["-100%", "200%"] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               />
@@ -233,7 +245,7 @@ export default function CTA() {
               </span>
 
               {/* Bottom glow */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.button>
 
             <motion.button
@@ -244,7 +256,7 @@ export default function CTA() {
                   window.scrollTo({ top: 0, behavior: "smooth" })
                 }
               }}
-              className="group relative px-10 py-5 bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-xl border border-white/20 text-white font-bold rounded-xl hover:bg-white/15 hover:border-cyan-400/40 transition-all text-lg overflow-hidden"
+              className="group relative px-10 py-5 bg-linear-to-r from-white/5 to-white/10 backdrop-blur-xl border border-white/20 text-white font-bold rounded-xl hover:bg-white/15 hover:border-cyan-400/40 transition-all text-lg overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 <ArrowUp className="w-5 h-5" />
@@ -252,7 +264,7 @@ export default function CTA() {
               </span>
 
               {/* Bottom glow */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </motion.button>
           </div>
 
@@ -282,7 +294,7 @@ export default function CTA() {
                 className="relative group"
               >
                 {/* Card background */}
-                <div className={`bg-gradient-to-br from-${stat.color}-950/30 via-black/60 to-black/80 border border-${stat.color}-500/20 rounded-xl p-6 backdrop-blur-xl hover:border-${stat.color}-500/40 transition-all duration-300`}>
+                <div className={`bg-linear-to-br from-black/60 via-black/40 to-black/80 border border-${stat.color}-500/20 rounded-xl p-6 backdrop-blur-xl hover:border-${stat.color}-500/40 transition-all duration-300`}>
                   <div className={`absolute inset-0 bg-${stat.color}-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity`} />
                   
                   <div className="relative text-center space-y-2">

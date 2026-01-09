@@ -28,17 +28,17 @@ export default function AboutPage() {
               className="space-y-8"
             >
               {/* Hero Section with Logos */}
-              <div className="relative border border-cyan-400/30 rounded-xl bg-gradient-to-br from-cyan-950/40 via-black/60 to-purple-950/40 backdrop-blur-xl p-8 overflow-hidden shadow-2xl shadow-cyan-500/10">
+              <div className="relative border border-cyan-400/30 rounded-xl bg-linear-to-br from-cyan-950/40 via-black/60 to-purple-950/40 backdrop-blur-xl p-8 overflow-hidden shadow-2xl shadow-cyan-500/10">
                 {/* Decorative grid */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
                 
                 <div className="relative">
                   {/* Logos Row */}
                   <div className="flex items-center justify-between mb-6 pb-6 border-b border-white/10">
                     <div className="relative group">
                       {/* Aura effect for Avenir */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/30 via-blue-500/30 to-purple-500/30 blur-2xl rounded-full scale-150 group-hover:scale-175 transition-transform duration-500 opacity-60 group-hover:opacity-80"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-purple-400/20 blur-xl rounded-full scale-125 animate-pulse"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-cyan-500/30 via-blue-500/30 to-purple-500/30 blur-2xl rounded-full scale-150 group-hover:scale-175 transition-transform duration-500 opacity-60 group-hover:opacity-80"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-cyan-400/20 via-blue-400/20 to-purple-400/20 blur-xl rounded-full scale-125 animate-pulse"></div>
                       <Image 
                         src="/avenir-removebg-preview.png" 
                         alt="Avenir" 
@@ -51,8 +51,8 @@ export default function AboutPage() {
                       <span className="text-gray-500 text-sm font-mono">powered by</span>
                       <div className="relative group">
                         {/* Aura effect for REYM */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-cyan-500/30 blur-xl rounded-full scale-150 group-hover:scale-175 transition-transform duration-500 opacity-60 group-hover:opacity-80"></div>
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-400/20 to-cyan-400/20 blur-lg rounded-full scale-125 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-linear-to-r from-purple-500/30 via-pink-500/30 to-cyan-500/30 blur-xl rounded-full scale-150 group-hover:scale-175 transition-transform duration-500 opacity-60 group-hover:opacity-80"></div>
+                        <div className="absolute inset-0 bg-linear-to-rrom-purple-400/20 via-pink-400/20 to-cyan-400/20 blur-lg rounded-full scale-125 animate-pulse"></div>
                         <Image 
                           src="/reym-removebg-preview.png" 
                           alt="REYM" 
@@ -68,7 +68,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.1 }}
-                    className="text-5xl font-mono font-bold tracking-wider mb-4 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
+                    className="text-5xl font-mono font-bold tracking-wider mb-4 bg-linear-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent"
                   >
                     The market doesn't reward effort.
                   </motion.h1>
@@ -104,10 +104,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="border border-white/10 rounded-xl bg-gradient-to-br from-purple-950/20 via-black/40 to-blue-950/20 backdrop-blur-xl p-8 shadow-lg"
+                className="border border-white/10 rounded-xl bg-linear-to-brrom-purple-950/20 via-black/40 to-blue-950/20 backdrop-blur-xl p-8 shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full"></div>
+                  <div className="w-1 h-8 bg-linear-to-b from-cyan-400 to-purple-400 rounded-full"></div>
                   <h2 className="text-2xl font-mono tracking-wider text-cyan-400">WHAT.AVENIR.ACTUALLY.DOES</h2>
                 </div>
                 <p className="text-gray-300 text-base leading-relaxed mb-4">
@@ -131,12 +131,12 @@ export default function AboutPage() {
                 className="space-y-6"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full"></div>
+                  <div className="w-1 h-8 bg-linear-to-brom-cyan-400 to-purple-400 rounded-full"></div>
                   <h2 className="text-2xl font-mono tracking-wider text-cyan-400">OBSERVATION.INFRASTRUCTURE</h2>
                 </div>
                 
                 {/* Billboard / Market Board */}
-                <div className="group border border-cyan-400/20 rounded-xl bg-gradient-to-br from-cyan-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-cyan-400/40 transition-all duration-300 shadow-lg hover:shadow-cyan-500/10">
+                <div className="group border border-cyan-400/20 rounded-xl bg-linear-to-br from-cyan-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-cyan-400/40 transition-all duration-300 shadow-lg hover:shadow-cyan-500/10">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-4xl font-bold text-cyan-400/20 font-mono">01</span>
                     <h3 className="text-cyan-400 font-mono text-xl pt-2">The Public Market Board</h3>
@@ -167,7 +167,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* The Pulse */}
-                <div className="group border border-purple-400/20 rounded-xl bg-gradient-to-br from-purple-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-purple-400/40 transition-all duration-300 shadow-lg hover:shadow-purple-500/10">
+                <div className="group border border-purple-400/20 rounded-xl bg-linear-to-brrom-purple-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-purple-400/40 transition-all duration-300 shadow-lg hover:shadow-purple-500/10">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-4xl font-bold text-purple-400/20 font-mono">02</span>
                     <h3 className="text-purple-400 font-mono text-xl pt-2">The Pulse</h3>
@@ -189,7 +189,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Avenir Picks */}
-                <div className="group border border-blue-400/20 rounded-xl bg-gradient-to-br from-blue-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-blue-400/40 transition-all duration-300 shadow-lg hover:shadow-blue-500/10">
+                <div className="group border border-blue-400/20 rounded-xl bg-linear-to-br from-blue-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-blue-400/40 transition-all duration-300 shadow-lg hover:shadow-blue-500/10">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-4xl font-bold text-blue-400/20 font-mono">03</span>
                     <h3 className="text-blue-400 font-mono text-xl pt-2">Avenir Picks</h3>
@@ -205,7 +205,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Marketspace */}
-                <div className="group border border-emerald-400/20 rounded-xl bg-gradient-to-br from-emerald-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-emerald-400/40 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10">
+                <div className="group border border-emerald-400/20 rounded-xl bg-linear-to-brrom-emerald-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-emerald-400/40 transition-all duration-300 shadow-lg hover:shadow-emerald-500/10">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-4xl font-bold text-emerald-400/20 font-mono">04</span>
                     <h3 className="text-emerald-400 font-mono text-xl pt-2">Marketspace</h3>
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Terminal Mode */}
-                <div className="group border border-amber-400/20 rounded-xl bg-gradient-to-br from-amber-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-amber-400/40 transition-all duration-300 shadow-lg hover:shadow-amber-500/10">
+                <div className="group border border-amber-400/20 rounded-xl bg-linear-to-br from-amber-950/30 via-black/50 to-transparent backdrop-blur-xl p-6 hover:border-amber-400/40 transition-all duration-300 shadow-lg hover:shadow-amber-500/10">
                   <div className="flex items-start gap-3 mb-3">
                     <span className="text-4xl font-bold text-amber-400/20 font-mono">05</span>
                     <h3 className="text-amber-400 font-mono text-xl pt-2">Terminal Mode</h3>
@@ -238,10 +238,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="border border-white/10 rounded-xl bg-gradient-to-br from-indigo-950/20 via-black/40 to-purple-950/20 backdrop-blur-xl p-8 shadow-lg"
+                className="border border-white/10 rounded-xl bg-linear-to-br from-indigo-950/20 via-black/40 to-purple-950/20 backdrop-blur-xl p-8 shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full"></div>
+                  <div className="w-1 h-8 bg-linear-to-b from-cyan-400 to-purple-400 rounded-full"></div>
                   <h2 className="text-2xl font-mono tracking-wider text-cyan-400">HOW.SUBMISSIONS.WORK</h2>
                 </div>
                 <div className="space-y-4">
@@ -254,7 +254,7 @@ export default function AboutPage() {
                     "Ongoing observation and potential selection"
                   ].map((step, i) => (
                     <div key={i} className="flex items-start gap-4 bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-all duration-300">
-                      <span className="text-cyan-400 font-mono text-lg font-bold min-w-[2rem]">{String(i + 1).padStart(2, '0')}</span>
+                      <span className="text-cyan-400 font-mono text-lg font-bold min-w-8">{String(i + 1).padStart(2, '0')}</span>
                       <span className="text-gray-300 text-base pt-1">{step}</span>
                     </div>
                   ))}
@@ -271,10 +271,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="border border-white/10 rounded-xl bg-gradient-to-br from-gray-900/40 via-black/40 to-transparent backdrop-blur-xl p-8 shadow-lg"
+                className="border border-white/10 rounded-xl bg-linear-to-br from-gray-900/40 via-black/40 to-transparent backdrop-blur-xl p-8 shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full"></div>
+                  <div className="w-1 h-8 bg-linear-to-b from-cyan-400 to-purple-400 rounded-full"></div>
                   <h2 className="text-2xl font-mono tracking-wider text-cyan-400">WHY.THIS.EXISTS</h2>
                 </div>
                 <p className="text-gray-300 text-base leading-relaxed mb-4">
@@ -292,10 +292,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.0 }}
-                className="border border-cyan-400/30 rounded-xl bg-gradient-to-br from-cyan-950/40 via-black/60 to-purple-950/40 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/10"
+                className="border border-cyan-400/30 rounded-xl bg-linear-to-br from-cyan-950/40 via-black/60 to-purple-950/40 backdrop-blur-xl p-8 shadow-2xl shadow-cyan-500/10"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-1 h-8 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full"></div>
+                  <div className="w-1 h-8 bg-linear-to-b from-cyan-400 to-purple-400 rounded-full"></div>
                   <h2 className="text-2xl font-mono tracking-wider text-cyan-400">WAITLIST.ACCESS</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -304,7 +304,7 @@ export default function AboutPage() {
                     { title: "EARLY PRICING", desc: "Access observation-phase pricing before standard rates apply", color: "purple" },
                     { title: "REFERRAL PRIORITY", desc: "Referral priority increases access weight. Observation favors reach.", color: "blue" }
                   ].map((benefit, i) => (
-                    <div key={i} className={`border border-${benefit.color}-400/20 rounded-lg bg-gradient-to-br from-${benefit.color}-500/10 to-transparent p-5 hover:border-${benefit.color}-400/40 transition-all duration-300`}>
+                    <div key={i} className={`border border-${benefit.color}-400/20 rounded-lg bg-linear-to-br from-${benefit.color}-500/10 to-transparent p-5 hover:border-${benefit.color}-400/40 transition-all duration-300`}>
                       <h3 className={`text-${benefit.color}-400 font-mono text-sm font-bold mb-2`}>{benefit.title}</h3>
                       <p className="text-gray-300 text-sm leading-relaxed">{benefit.desc}</p>
                     </div>
@@ -312,7 +312,7 @@ export default function AboutPage() {
                 </div>
                 
                 <a href="/waitlist" className="block">
-                  <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-4 rounded-lg font-mono text-base font-bold hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50">
+                  <button className="w-full bg-linear-to-r from-cyan-500 to-purple-500 text-white px-6 py-4 rounded-lg font-mono text-base font-bold hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 shadow-2xl shadow-cyan-500/30 hover:shadow-cyan-500/50">
                     Join Observation Queue →
                   </button>
                 </a>
@@ -325,13 +325,13 @@ export default function AboutPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.2 }}
-                  className="border border-white/10 rounded-xl bg-gradient-to-br from-gray-900/40 via-black/40 to-transparent backdrop-blur-xl p-6 shadow-lg"
+                  className="border border-white/10 rounded-xl bg-linear-to-br from-gray-900/40 via-black/40 to-transparent backdrop-blur-xl p-6 shadow-lg"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="relative group">
                       {/* Aura effect for REYM in About section */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500/40 via-pink-500/40 to-cyan-500/40 blur-xl rounded-full scale-150 group-hover:scale-175 transition-transform duration-500 opacity-70"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-cyan-400/30 blur-lg rounded-full scale-125 animate-pulse"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-purple-500/40 via-pink-500/40 to-cyan-500/40 blur-xl rounded-full scale-150 group-hover:scale-175 transition-transform duration-500 opacity-70"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-purple-400/30 via-pink-400/30 to-cyan-400/30 blur-lg rounded-full scale-125 animate-pulse"></div>
                       <Image 
                         src="/reym-removebg-preview.png" 
                         alt="REYM" 
@@ -358,7 +358,7 @@ export default function AboutPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.4 }}
-                  className="border border-white/10 rounded-xl bg-gradient-to-br from-gray-900/40 via-black/40 to-transparent backdrop-blur-xl p-6 shadow-lg"
+                  className="border border-white/10 rounded-xl bg-linear-to-br from-gray-900/40 via-black/40 to-transparent backdrop-blur-xl p-6 shadow-lg"
                 >
                   <h2 className="text-xl font-mono tracking-wider mb-4 text-cyan-400">FREQUENT.QUESTIONS</h2>
                   <div className="space-y-4 text-sm">

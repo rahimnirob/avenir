@@ -36,7 +36,7 @@ export default function RootPage() {
       <div className="max-w-2xl w-full space-y-8">
         {/* Logo/Title */}
         <div className="text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-extralight text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 tracking-[0.3em] font-mono uppercase">
+          <h1 className="text-4xl sm:text-5xl font-extralight text-transparent bg-clip-text bg-linear-to-r from-white via-gray-200 to-gray-400 tracking-[0.3em] font-mono uppercase">
             AVENIR
           </h1>
           <div className="flex items-center justify-center gap-2">
@@ -49,9 +49,9 @@ export default function RootPage() {
 
         {/* Mobile Notice */}
         {showNotice && (
-          <div className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-md border border-yellow-500/30 rounded-lg p-6 space-y-4 animate-[fadeIn_0.5s_ease-in-out]">
+          <div className="bg-linear-to-brrom-gray-900/80 to-black/80 backdrop-blur-md border border-yellow-500/30 rounded-lg p-6 space-y-4 animate-[fadeIn_0.5s_ease-in-out]">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
+              <AlertCircle className="w-6 h-6 text-yellow-400 shrink-0 mt-0.5" />
               <div className="space-y-3 flex-1">
                 <h2 className="text-yellow-400 font-mono text-lg font-semibold">
                   Mobile Device Detected
@@ -63,13 +63,13 @@ export default function RootPage() {
                 
                 <div className="space-y-3 ml-4">
                   <div className="flex items-start gap-3">
-                    <Monitor className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                    <Monitor className="w-5 h-5 text-gray-400 shrink-0.5" />
                     <div className="text-sm text-gray-300">
                       <span className="font-medium text-white">Desktop Mode:</span> Enable desktop site mode in your mobile browser settings
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Smartphone className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                    <Smartphone className="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
                     <div className="text-sm text-gray-300">
                       <span className="font-medium text-white">Emulator:</span> Use Avenir in a desktop emulator for optimal performance
                     </div>
@@ -87,7 +87,7 @@ export default function RootPage() {
             {/* Continue Button */}
             <button
               onClick={handleContinue}
-              className="w-full px-6 py-3 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-mono text-sm tracking-wider uppercase rounded border border-gray-600 hover:border-gray-500 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full px-6 py-3 bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-mono text-sm tracking-wider uppercase rounded border border-gray-600 hover:border-gray-500 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Continue Anyway
               <span className="text-xs opacity-70">(5s)</span>
